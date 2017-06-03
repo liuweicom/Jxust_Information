@@ -1,0 +1,23 @@
+/*分标签面板*/
+
+#middle_content>.container>.row>.col-xs-8.col-md-9>.tab-content>.tab-pane{
+	overflow: auto;
+}
+#middle_content>.container>.row>.col-xs-8.col-md-9>.tab-content>.tab-pane>h5>.second_title{
+	padding: 2px 5px;
+	background: #143270;
+	color: #fff;
+  /*display: block;*/
+}
+
+.col-xs-8 .col-md-9>.tab-content>.tab-pane>p{
+	/*background: red;*/
+	color: #555;
+  text-indent: 2em;
+
+}
+/*填表*/
+.form-horizontal{
+  margin: 0;
+  padding:0 15px;
+}

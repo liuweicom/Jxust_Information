@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/equipment.css">
+ <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="konva/konva.js"></script>
+<script type="text/javascript" src="js/PieChart.js"></script>
+  <title>实验室信息展示网站设计</title>
+
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+  
+  <section id="head_bottom">
+    <nav class="navbar navbar-jxust navbar-static-top">
+   <!--  navbar-fixed-top -->
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">切换菜单</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">信息实验室</a>
+    </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav  navbar-nav ">
+      <!-- nav-pills -->
+        <li ><a href="index.html">首页</a></li>
+        <li ><a href="team.html">科研队伍</a></li>
+        <li ><a href="harvest.html">科研成果</a></li>
+        <li ><a href="librarys.html">文献资源</a></li>
+        <li class="active" ><a href="#">设备环境</a></li>
+        <li ><a href="order.html">实验室预约</a></li>
+       </ul>
+       <!-- 搜索框 -->
+         <form class="navbar-form navbar-right  hidden-sm hidden-xs hidden-md ">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-jxust">搜索
+        </button>
+      </form>
+
+      </div>
+    </div>
+    </nav>
+  </section>
+<section id="middle_content">
+  <div class="container">
+    <h3>设备与环境</h3>
+    <div class="row">
+  <div class="col-xs-12 col-md-3">
+    <div class="list-group" role="tablist">
+  <a class="list-group-item active" href="#home" aria-controls="home" role="tab" data-toggle="tab">仪器设备配备情况</a>
+  <a class="list-group-item" href="#second" aria-controls="second" role="tab" data-toggle="tab">维护与运行</a>
+  <a class="list-group-item" href="#third" aria-controls="third" role="tab" data-toggle="tab">实验中心环境与安全</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-9">
+    
+    <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+    <h5><span class="second_title">仪器设备配备情况</span></h5>
+    <p>
+      实验室在设备仪器方面经费充足，每年均投入约65万元用于新设备的采购和旧设备更新，使仪器设备始终处于良好的工作状态，各实验室仪器设备合理配置，资源共享，使设备利用率大于96%。5万元以上主要设备如下：
+    </p>
+        <table class="table table-striped">
+             <tr>
+              <th>序号</th><th>设备名称</th><th>型号</th><th>数量</th><th>价格（万元）</th><th>设备编号</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>核心交换机</td>
+              <td>S6505</td>
+              <td>1</td>
+              <td>29.16</td>
+              <td>20032942</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>电缆认证分析仪</td>
+              <td>DTX1200-MS</td>
+              <td>1</td>
+              <td>14.5</td>
+              <td>20091073</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>防火墙</td>
+              <td>FW-E200A-4FE</td>
+              <td>1</td>
+              <td>9.02</td>
+              <td>20032960</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>入侵监测仪</td>
+              <td>NIDS100-P</td>
+              <td>1</td>
+              <td>9.74</td>
+              <td>20031959</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>核心路由器</td>
+              <td>R-3680R</td>
+              <td>1</td>
+              <td>5.32</td>
+              <td>20032954</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>主交换机</td>
+              <td>CISCO2948G-L3</td>
+              <td>1</td>
+              <td>5.85</td>
+              <td>20020056</td>
+            </tr>
+        </table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="second">
+    <h5><span class="second_title">维护与运行</span></h5>
+      <p>
+        仪器设备由实验室专人负责，并建立仪器设备管理制度。所有仪器设备都要求建立帐卡，做到帐卡，物相符，并做到仪器说明书、附件齐全。设备借出必须按照办理手续，设备损坏必须及时维修，并确保设备的完好率高于96%，以确保实验室教学工作顺利进行。近5年来学校下拨到实验室的仪器设备维修经费共计75万元，基本上保证实验课程开课所需仪器设备的正常运行。
+      </p> 
+    </div>
+     <div role="tabpanel" class="tab-pane" id="third">
+   <h5><span class="second_title">实验中心环境与安全</span></h5>
+    <p>
+      实验室实行教师挂牌管理，责任到人。并制定了实验室安全管理制度。 </p>
+      <p>实验室面积、空间、布局科学。实验室计算机与校园网相连，实现了信息化和智能化管理。实验室的实验室安装了连接到学校保卫科的红外监控摄像设备，安装有防盗门窗，防火设备齐全。</p>
+      <p>实验室环境和设施体现以人为本，实验室设备和桌椅都符合国家环保要求。认真开展广泛的师生安全教育，实验室明示实验室安全制度、实验室管理制度和实验员工作职责。从新生入学参观到各实验室教学课程中都贯穿实验室安全教育。</p>
+      <p>实验室环境、安全、环保符合国家规范，具备信息化、网络化、智能化条件，运行维护保障措施得力，适应开放管理和学生自主学习的需要。</p>
+   
+    </div>
+</div>
+</div>
+  </div>
+</section>
+</header>
+<!--/头部区域 -->
+
+<!-- 尾部 -->
+<footer id="bottom_content">
+  <div class="container">
+  <div class="text-center">
+  <address>
+    <strong>Copyright版权所有： 
+    江西理工大学信息工程学院 2012 All Rights Reserved.信息技术实验室</strong><br/>
+    地址：章贡区红旗大道86号-江西理工大学信息工程学院。<br/>
+    联系电话：8208208820.
+  </address>
+  </div>
+  </div>
+</footer>
+<!-- /尾部 -->
+
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/team.js"></script>
+</body>
+
+</html>

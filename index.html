@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" >
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+ <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="konva/konva.js"></script>
+  <script type="text/javascript" src="./js/CircleText.js"></script>
+<script type="text/javascript" src="js/PieChart.js"></script>
+<script type="text/javascript" src="js/AutoCircle.js"></script>
+<!-- <script type="text/javascript" src="php/more_list.php?_jsonp=getMOre_List"></script> -->
+	<title>实验室信息展示网站设计</title>
+
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+	<!-- <div class="topbar  visible-md visible-lg visible-sm"> -->
+		<!---->
+		<!-- <div class="container"> -->
+			<!-- <div class="row"> -->
+				<!-- <div class="col-xs-9 col-md-8 .col-sm-7"> -->
+					<!-- <div id="header_logo"></div> -->
+					<!-- <div id="header_info">实验室信息展示设计</div> -->
+				<!-- </div> -->
+				<!-- <div class="col-xs-3 col-md-4 .col-sm-5"> -->
+				<!-- <a id="topbar_right" tel="8008208820" > -->
+				<!-- 	<i class="icon-telephone"></i> -->
+				<!-- 	<span id="connect" data-toggle="tooltip" data-placement="bottom" title="电话：8008208820">联系我们</span> -->
+			<!-- 	</a> -->
+			<!-- 	<a> -->
+					
+			<!-- 	</a> -->
+			<!-- 	</div> -->
+			<!-- </div> -->
+	<!-- 	</div> -->
+	<!-- </div> -->
+	<section id="head_bottom">
+		<nav class="navbar navbar-jxust  navbar-static-top">
+   <!--  navbar-fixed-top -->
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">切换菜单</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">信息实验室</a>
+    </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav  navbar-nav ">
+      <!-- nav-pills -->
+        <li class="active" ><a href="#">首页</a></li>
+        <li ><a href="team.html">科研队伍</a></li>
+        <li ><a href="harvest.html">科研成果</a></li>
+        <li ><a href="librarys.html">文献资源</a></li>
+        <li ><a href="equipment.html">设备环境</a></li>
+        <li ><a href="order.html">实验室预约</a></li>
+        <!-- <li ><a class="pull-right" data-toggle="modal" data-target="#login_form">登录</a></li> -->
+       </ul>
+       <!-- 搜索框 -->
+         <form class="navbar-form navbar-right  hidden-sm hidden-xs hidden-md ">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-jxust">搜索
+        </button>
+        <a  class="btn btn-jxust" style="color:#203c76" data-toggle="modal" data-target="#login_form" id="login_btn">登录
+        </a>
+      </form>
+       
+
+      </div>
+    </div>
+    </nav>
+	</section>
+
+</header>
+<!--/头部区域 -->
+<!-- 实验室成果轮播图 -->
+<section id="content_carousel">
+	<div id="main_img" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#main_img" data-slide-to="0" class="active"></li>
+    <li data-target="#main_img" data-slide-to="1"></li>
+    <li data-target="#main_img" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item  active" data-image-lg="./img/bg2.png" data-image-xs="./img/bg2_640_340.png">
+    <!-- ./img/bg2_640_340.png -->
+      <!-- <img src="./img/bg2.jpg" alt="..." > -->
+      <div class="carousel-caption">
+        <h3>first</h3>
+        <p>新年祝福</p>
+      </div>
+    </div>
+    <div class="item" data-image-lg="./img/img_03.png" data-image-xs="./img/img_03_640_340.png">
+      <!-- <img src="./img/img_02.jpg" alt="..."> -->
+      <div class="carousel-caption">
+         <h3>second</h3>
+        <p>设备</p>
+      </div>
+    </div>
+    <div class="item" data-image-lg="./img/img_02.png" data-image-xs="./img/img_02_640_340.png">
+      <!-- <img src="./img/img_02.jpg" alt="..." > -->
+      <div class="carousel-caption">
+      <h3>third</h3>
+      <p>实验进行中</p>
+      </div>
+     
+  </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#main_img" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#main_img" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+<!-- /实验室成果轮播图 -->
+<!--实验室简介  -->
+<section id="content_info" class="pieName2">
+<div class="container">
+<h3>实验室中心简介</h3>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+  <p>
+    信息工程学院信息技术实验中心是我国成立的较早的专业实验室之一，其前身是计算机运用技术实验室，建于1984年，1993年经学科调整成立信息实验室中心，现隶属于信息工程学院二级管理。实验中心最初依托计算机运用技术专业建立，并伴随该专业2003年获得<strong>硕士学位授予权</strong>、2004年被批准为江西省高等学校<strong>本科品牌专业</strong>、2006年被批准为<strong>江西省“十一五”重点学科</strong>而不断发展壮大。中心现由计算机应用技术实验室、计算机硬件实验室、软件工程与测试实验室、网络系统实验室、网络综合布线实验室、普尔文教授考试中心，以及软件工程研究室、智能信息研究室、网络技术及应用研究室、ERP与IRP研究室、信息完全研究中心、嵌入式系统研究室、机器学习研究室等组成。主要承担计算机文化基础、C语言程序设计、汇编语言程序设计、JAVA程序设计、数据结构与算法、数据库系统、操作系统、编译原理、多媒体运用与技术、软件工程、web技术及运用、LINUX、数据仓库与数据挖掘、网络软件开发技术、数字图像处理、密码学、计算机网络、计算机组成原理、微机原理等多门计算机课程的理论教学、实验教学、实习和科研任务。
+  </p>
+  <p id="bg_img">
+    实验中心还承担了学校学生课外创新活动如全校大学生电脑作品设计竞赛的培训指导工作；H3C技术有限公司、江西国鼎科技有限公司建立了合作伙伴关系，“<strong>H3C网络学院</strong>”、“<strong>思科网络技术学院</strong>”相继在信息技术实验中心挂牌；中心加入了“<strong>SUN大学校园计划</strong>”，申请了普尔文考试中心，承担了H3C、JAVA认证等国内外信息类认证考试的任务，参与学生人数每年约200人。
+  </p>
+  </div>
+  <div class="col-sm-12 col-md-4 hidden-xs" >
+  <div id="pie" class="webcast" ></div>
+  <!-- <p class="text-right">实验室中心组成分布图——</p> -->
+  </div>
+ <!--  <div class="col-xs-12 col-md-12">
+  
+  </div> -->
+</div>
+  
+  
+</div>
+</section>
+<!-- /实验室简介 -->
+<!-- news -->
+<section id="three_parts">
+  <div class="container">
+    <!-- Nav tabs -->
+  <ul class="nav nav-jxust" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">新闻动态</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">通知公告</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">研究方向</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">竞赛园地</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home">
+      <div  class="list-group">
+      <!--<span class="num">1</span> -->
+        <a href="#" class="list-group-item">我校万林生教授再次荣获国家科技进步二等奖 <span class="badge">new</span></a>
+        <a href="#" class="list-group-item">江西理工大学6位师生荣获2016年度宝钢教育奖 <span class="badge">new</span></a>
+        <a href="#" class="list-group-item">我院学子喜获2016全国高校密码数字挑战赛三等奖</a>
+        <a href="#" class="list-group-item">我院学子在江西省大学生手机软件大赛中喜获佳绩</a>
+        <a href="#" class="list-group-item">我院学子在江西省软件服务外包创新创业大赛中喜获佳绩</a>
+        <a href="#" class="list-group-item">我院在2016年江西省大学生网络工程大赛中荣获一等奖</a>
+        <a href="#" class="list-group-item">2016年江西省大学生手机软件设计大赛分赛在我院顺利举行</a>
+        <a href="#" class="list-group-item">我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+    
+      </div>
+      <button class="getMore">更多</button>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+        <div  class="list-group">
+        <a href="#" class="list-group-item">我校万林生教授再次荣获国家科技进步二等奖 <span class="badge">new</span></a>
+        <a href="#" class="list-group-item">江西理工大学6位师生荣获2016年度宝钢教育奖 <span class="badge">new</span></a>
+        <a href="#" class="list-group-item">我院学子喜获2016全国高校密码数字挑战赛三等奖</a>
+        <a href="#" class="list-group-item">我院学子在江西省大学生手机软件大赛中喜获佳绩</a>
+        <a href="#" class="list-group-item">我院学子在江西省软件服务外包创新创业大赛中喜获佳绩</a>
+        <a href="#" class="list-group-item">我院在2016年江西省大学生网络工程大赛中荣获一等奖</a>
+        <a href="#" class="list-group-item">2016年江西省大学生手机软件设计大赛分赛在我院顺利举行</a>
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+     <!--   <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+       <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+        
+        <a href="#" class="list-group-item"><span class="num"></span>我院学子成功入围首届全国密码数字挑战赛决赛</a>
+         -->
+      </div>
+      <button class="getMore">更多</button>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="messages"> 
+    <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="./img/3_64_64.jpg" alt="4">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">智能信息处理与优化计算</h4>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+    </div> 
+    <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="./img/1_64_64.jpg" alt="1">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">无线传感器网络与信息安全科研团队介绍</h4>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+    </div>
+    <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="./img/2_64_64.jpg" alt="2">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">移动网络可通信协议</h4>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+    </div>
+    <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="./img/3_64_64.jpg" alt="3">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">视频信号处理与嵌入式运用技术</h4>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+    </div>
+</div>
+    <div role="tabpanel" class="tab-pane fade" id="settings">
+<div class="list-group">
+  <a href="#" class="list-group-item">ACM编程俱乐部</a>
+  <a href="#" class="list-group-item">普尔文认证中心</a>
+  <a href="#" class="list-group-item">H3C认证</a>
+  <a href="#" class="list-group-item">JAVA认证</a>
+  <a href="#" class="list-group-item"> 电脑知识竞赛</a>
+  <a href="#" class="list-group-item">C语言竞赛</a>
+  <a href="#" class="list-group-item">电脑大赛模拟系统</a>
+  <a href="#" class="list-group-item">电脑作品大赛介绍</a>
+</div>
+    </div>
+  </div>
+  </div>
+
+</section>
+<!-- /news -->
+<!-- 通知公告 -->
+<section>
+
+</section>
+<!-- /通知公告 -->
+<!-- 研究方向 -->
+<section>
+
+</section>
+<!-- /研究方向 -->
+
+<!-- 尾部 -->
+<footer id="bottom_content">
+  <div class="container">
+  <div class="text-center">
+  <address>
+    <strong>Copyright版权所有： 
+    江西理工大学信息工程学院 2012 All Rights Reserved.信息技术实验室</strong><br/>
+    地址：章贡区红旗大道86号-江西理工大学信息工程学院。<br/>
+    联系电话：8208208820.
+  </address>
+  </div>
+  </div>
+</footer>
+<!-- /尾部 -->
+<!-- 登录部分 modal-->
+<div class="modal" id="login_form">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">登录</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="login_name2" class="col-sm-2 control-label">一卡通号</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="login_name2" placeholder="请输入一卡通号" data-container="body" data-toggle="popover" data-placement="top">
+        </div>
+      </div>
+    <div class="form-group">
+        <label for="inputPassword1" class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <a id="to_login_in" data-toggle="modal" data-target="#login_in">注册</a>&nbsp;&nbsp;
+        <a id="rember_id">记住密码</a>
+        </div>
+      </div>  
+    </form>
+   </div>
+      <div class="modal-footer">
+      
+        <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="btn_login">登录</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 登录部分 -->
+
+
+<div class="modal" id="login_in">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" style="color:#203c76">注册</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="login_name" class="col-sm-2 control-label">姓名</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="login_name" placeholder="请填写真实姓名" data-container="body" data-toggle="popover" data-placement="top" >
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="id_index" class="col-sm-2 control-label" >一卡通号</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="id_index" placeholder="请填写0-9的10位数字" data-container="body" data-toggle="popover" data-placement="top">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">手机号码</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" placeholder="请输入手机号码" data-container="body" data-toggle="popover" data-placement="top">
+        </div>
+      </div>
+    <div class="form-group">
+        <label for="inputPassword2" class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword2" placeholder="请输入密码" data-container="body" data-toggle="popover" data-placement="top">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Passwordagain" class="col-sm-2 control-label">确认密码</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="Passwordagain" placeholder="请再次确认密码" data-container="body" data-toggle="popover" data-placement="top">
+        </div>
+      </div>  
+    </form>
+   </div>
+      <div class="modal-footer">
+      
+        <a type="button" class="btn btn-primary" data-toggle="modal" id="sign">注册</a>
+        <a type="button" class="btn btn-primary" id="to_login_form" data-toggle="modal" data-target="#login_form">登录</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 登录部分 -->
+<script type="text/javascript">
+// function CreatAutoPie(){
+  // var pieName=document.getElementsByClassName('pieName')[0];
+ // console.log(pieName.offsetWidth);
+ // console.log(pieName.offsetHeight);
+ // console.log(pieName.offsetTop);
+ // console.log(pieName.offsetLeft);
+    // var stage=new Konva.Stage({
+    //     container:'pie',
+    //     width:window.innerWidth,
+    //     height:window.innerHeight
+    // });
+    // var cenX=pieName.offsetWidth/2||120;
+    // var cenY=120;
+    // var bglayer=new Konva.Layer();
+    // stage.add(bglayer);
+    // var data = [
+    //     { name: "前端", value: .25, color: '#e0e'  },
+    //     { name: "php",  value: .2,  color: 'orange'},
+    //     { name: "UI", value: .3,  color: 'blue'  },
+    //     { name: "C++",  value: .05, color: 'green' },
+    //     { name: "游戏", value: .1,  color: 'purple'},
+    //     { name: "Java", value: .1,  color: 'red'   }
+    // ];
+    // var x=cenX;
+    // var y=cenY;
+    // var Pie=new PieChart({
+    //     x: cenX,
+    //     y: cenY,
+    //     r: 100,
+    //     data: data
+    // });
+    // Pie.addToGroupOrLayer(bglayer);
+    // bglayer.draw();
+    // Pie.playAnimate();
+    // 将动画改成背景图
+    // bg.style.background='url("'+Pie.canvas.toDataURL()+'")';
+// }
+
+    </script>
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login_form.js"></script>
+<script type="text/javascript">
+   
+   function resize(){
+     var windowWidth=$(window).width();
+    var isSmallscreen=windowWidth<768;
+
+    $("#main_img>.carousel-inner>.item").each(function(i,item){
+      var $item=$(item);
+
+      var imgsrc=$item.data(isSmallscreen?'image-xs':'image-lg');
+      $item.css("backgroundImage",'url("'+imgsrc+'")');
+      if (isSmallscreen) {
+        $item.empty();
+        var img1=document.createElement('img');
+        img1.src=" ";
+        img1.src=imgsrc;
+        // $item.html('<img src="'+imgsrc+'" alt=" "/>');
+        $item.append(img1);
+      }else {
+        // $item.empty();
+      }
+      AutoCircle();
+    });
+  }
+     $(function(){
+      // 改变页面的大小重新加载动画
+      $(window).on('resize',resize).trigger('resize');
+      // 初始化tooltips插件
+       $('[data-toggle="tooltip"]').tooltip();
+
+
+        var home=document.getElementById('home');
+        var a_list=home.getElementsByClassName('list-group-item');
+        var btn_getmore=home.getElementsByClassName('getMore')[0];
+        // var list_grounp=home.getElementsByClassName('list-group');
+
+
+        var profile=document.getElementById('profile');
+        var a_list_profile=profile.getElementsByClassName('list-group-item');
+        var btn_getmore_profile=profile.getElementsByClassName('getMore')[0];
+        // var list_grounp_profile=profile.getElementsByClassName('list-group');
+
+        btn_getmore.onclick=function(){
+          var num=2;
+          var last=a_list.length;
+          console.log(last);
+          var ur2='./php/more_list.php?last='+last+'&count='+num;
+          queryTitle(ur2,num);
+          };
+
+           btn_getmore_profile.onclick=function(){
+          var num=3;
+          var last=a_list_profile.length;
+          console.log(last);
+          var ur2='./php/more_list.php?last='+last+'&count='+num;
+          queryNote(ur2,num);
+          };
+
+
+
+          // 判断是否登入
+          if(window.sessionStorage.getItem("isLogin")){
+        $("#login_btn").text("已登入").css('color',"red");
+      };
+
+     });
+
+     
+
+      function queryNote(url,num){
+         $.ajax({
+              type : "get",
+              async: true,
+              url : url,
+              dataType : "json",
+              success : function(data){
+                 console.log(data);
+               $.each(data,function(i,element){
+                var titlename=element.title;
+                var time=element.time;
+                var html_text=$('<a href="#" class="list-group-item"><span class="num"></span>'+titlename+'</a>');
+                $('.list-group').eq(1).append(html_text);
+               });
+
+                if(data.length<num){
+                  $('.getMore').eq(1).html('没有更多新闻!').unbind('click');
+                  // btn_getmore.innerHTML='没有更多评论!';
+                  // btn_getmore.onclick=null;
+                  // return false;
+                }
+              
+              },
+              error:function(){
+                  console.log('fail sorry');
+              }
+            });
+      }
+     function queryTitle(url,num){
+        $.ajax({
+              type : "get",
+              async: true,
+              url : url,
+              dataType : "json",
+              success : function(data){
+                 console.log(data);
+               $.each(data,function(i,element){
+                var titlename=element.title;
+                var time=element.time;
+                var html_text=$('<a href="#" class="list-group-item"><span class="num"></span>'+titlename+'</a>');
+                $('.list-group').eq(0).append(html_text);
+               });
+
+                if(data.length<= 1){
+                  $('.getMore').eq(0).html('没有更多新闻!').unbind('click');
+                  // btn_getmore.innerHTML='没有更多评论!';
+                  // btn_getmore.onclick=null;
+                  // return false;
+                }
+              
+              },
+              error:function(){
+                  console.log('fail sorry');
+              }
+            });
+     }
+
+</script>
+</body>
+
+</html>

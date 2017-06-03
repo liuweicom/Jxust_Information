@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/librarys.css">
+ <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+  <title>实验室信息展示网站设计</title>
+
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+  
+  <section id="head_bottom">
+    <nav class="navbar navbar-jxust navbar-static-top">
+   <!--  navbar-fixed-top -->
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">切换菜单</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">信息实验室</a>
+    </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav  navbar-nav ">
+      <!-- nav-pills -->
+        <li ><a href="index.html">首页</a></li>
+        <li ><a href="team.html">科研队伍</a></li>
+        <li ><a href="harvest.html">科研成果</a></li>
+        <li class="active" ><a href="librarys.html">文献资源</a></li>
+        <li ><a href="equipment.html">设备环境</a></li>
+        <li ><a href="order.html">实验室预约</a></li>
+       </ul>
+       <!-- 搜索框 -->
+         <form class="navbar-form navbar-right  hidden-sm hidden-xs hidden-md ">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-jxust">搜索</button>
+      </form>
+      </div>
+    </div>
+    </nav>
+  </section>
+<section id="middle_content">
+  <div class="container">
+    <h3>文献资源</h3>
+    <div class="row">
+  <div class="col-xs-4 col-md-3">
+    <div class="list-group">
+  <a href="#" class="list-group-item active">实验导学</a>
+  <a href="#" class="list-group-item">主要的实验指导书</a>
+  <a href="#" class="list-group-item">主要的课程设计大纲</a>
+  <a href="#" class="list-group-item">主要的实验教材</a>
+  <a href="#" class="list-group-item">主要的专业实习大纲</a>
+   <a href="#" class="list-group-item">教学视频</a>
+  <a href="#" class="list-group-item">学术论文</a>
+  <a href="#" class="list-group-item">专利</a>
+</div>
+  </div>
+  <div class="col-xs-8 col-md-9">
+    <h5><span class="second_title">实验导学</span></h5>
+     <div id="main_content">
+      <!-- <table class="table table-striped">
+      <tbody id="write_text">
+      <tr><td>Internet编程技术</td><td>Java_EE高级编程技术</td><td>WEB技术与运用</td></tr>
+       <tr><td>计算方法</td><td>计算机组成原理</td><td>软件工程</td></tr>
+        <tr><td>LINUX系统编程</td><td>算法分析与设计</td><td>数据库系统</td></tr>
+        <tr><td>微机原理与借口技术</td><td>算法分析与设计</td><td>数据库系统</td></tr>
+      </tbody>
+      </table> -->
+     <!--  <video src="./img/10407_5_b_1.wmv" width="300" height="300" controls="true" autoplay="autoplay" /> -->
+     </div>
+
+  </div>
+</div>
+  </div>
+</section>
+</header>
+<!--/头部区域 -->
+
+<!-- 尾部 -->
+<footer id="bottom_content">
+  <div class="container">
+  <div class="text-center">
+  <address>
+    <strong>Copyright版权所有： 
+    江西理工大学信息工程学院 2012 All Rights Reserved.信息技术实验室</strong><br/>
+    地址：章贡区红旗大道86号-江西理工大学信息工程学院。<br/>
+    联系电话：8208208820.
+  </address>
+  </div>
+  </div>
+</footer>
+<!-- /尾部 -->
+
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+// window.addEventListener("load",function(data){
+//       $('#write_text').empty();
+//        $('#write_text').append($('<tr><th>#</th><th>课题名称（下达编号）</th><th>来源</th><th>起讫时间</th><th>承担人</th>'));
+//        queryALL("project_zong"); 
+//     },false);
+function queryALL(type){
+        var url="./php/all_papers.php?type="+type;
+        var type1=type;
+        console.log(type1);
+        $.ajax({
+              type : "get",
+              async: true,
+              url : url,
+              dataType : "json",
+              success : function(data){
+                 // console.log(data);
+               switch(type1){
+                case 'academic_papers':
+                  data_academic_papers(data);
+                break;
+
+                case 'patent':data_patent(data);
+                break;
+
+                case 'educational_reform_paper':
+                  data_educational_reform_paper(data);
+                break;
+
+                default:console.log('fail');
+                break;
+               } 
+              },
+              error:function(){
+                  console.log('fail sorry');
+              }
+            });
+     }
+
+     function queryResources(type){
+        var url="./php/Document_resources.php?type="+type;
+        var type1=type;
+        console.log(type1);
+        $.ajax({
+              type : "get",
+              async: true,
+              url : url,
+              dataType : "json",
+              success : function(data){
+                  console.log(data);
+               switch(type1){
+                case 'Experimental_guidance':
+                  data_Experimental_guidance(data);
+                break;
+
+                case 'Experimental_instruction':data_Experimental_instruction(data);
+                break;
+
+                case 'curriculum_design':
+                  data_curriculum_design(data);
+                break;
+                 case 'teaching_material':
+                  data_teaching_material(data);
+                break;
+                 case 'internship_program':
+                  data_internship_program(data);
+                break;
+                case 'teaching_vedio':
+                  data_teaching_vedio(data);
+                break;
+                default:console.log('fail');
+                break;
+               } 
+              },
+              error:function(){
+                  console.log('fail sorry');
+              }
+            });
+     }
+
+      function data_internship_program(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+        // console.log(data.length);
+        for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+        var text_src=$('<iframe src='+data[0].src+' width="100%" height="464" scrolling="no" class="vedio_html"></iframe> ');
+        $('#main_content').append(text_src);
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var src1=element.src;
+   //              var type=element.type;
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);             
+   //  });
+  }
+}
+
+     function data_teaching_material(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var publication=element.publication;
+   //              var time=element.time;
+   //              var author=element.author;
+   //              var level=element.level;
+                 
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);    
+   //  });
+    for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+    var text_src=$('<iframe src='+data[0].src+' width="100%" height="464" scrolling="no" class="vedio_html"></iframe> ');
+        $('#main_content').append(text_src);
+  }
+}
+
+      function data_curriculum_design(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var publication=element.publication;
+   //              var time=element.time;
+   //              var author=element.author;
+   //              var level=element.level;
+                 
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);        
+   //  });
+    for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+    var text_src=$('<iframe src='+data[0].src+' width="100%" height="464" scrolling="no" class="vedio_html"></iframe> ');
+        $('#main_content').append(text_src);
+  }
+}
+
+     function data_Experimental_instruction(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var publication=element.publication;
+   //              var time=element.time;
+   //              var author=element.author;
+   //              var level=element.level;
+                 
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);
+
+   //  });
+    for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+    var text_src=$('<iframe src='+data[0].src+' width="100%" height="464" scrolling="no" class="vedio_html"></iframe>');
+        $('#main_content').append(text_src);
+  }
+}
+
+     function data_Experimental_guidance(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var publication=element.publication;
+   //              var time=element.time;
+   //              var author=element.author;
+   //              var level=element.level;
+                 
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);        
+   //  });
+    for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+    var text_src=$('<iframe src='+data[0].src+' width="100%" height="464" scrolling="no" class="vedio_html"></iframe> ');
+        $('#main_content').append(text_src);
+  }
+}
+function data_teaching_vedio(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   // $.each(data,function(i,element){
+   //              var id=element.id;
+   //              var titlename=element.title_name;
+   //              var publication=element.publication;
+   //              var time=element.time;
+   //              var author=element.author;
+   //              var level=element.level;
+                 
+   //              var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+   //             $('#write_text').append(html_text);        
+   //  });
+    for(var i=0;i<data.length;i++){
+          // console.log(i);
+          if(i%3==0){
+            var html_tr=$('<tr><td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td></tr>');
+            $('#write_text').append(html_tr);
+          }else{
+            var html_td=$('<td><a data-src='+data[i].src+'>'+data[i].title_name+'</a></td>');
+            html_tr.append(html_td);
+          }
+        }
+    var text_src=$('<video width="100%" height="464" controls="true" ><source src='+data[0].src+' class="vedio_html"></source></video>');
+        $('#main_content').append(text_src);
+  }
+}
+     function data_patent(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   $.each(data,function(i,element){
+                 var id=element.id;
+                var titlename=element.title_name;
+                var publication=element.publication;
+                var time=element.time;
+                var author=element.author;
+                var level=element.level;
+                 
+                var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+time+'</td><td>'+author+'</td><td>'+level+'</td></tr>');
+                $('#write_text').append(html_text);
+               });
+                }
+}
+
+function data_academic_papers(data){
+   if(data.length<= 1){
+     $('#write_text').html('没有更多信息!').unbind('click');
+      }else{
+   $.each(data,function(i,element){
+                var id=element.id;
+                var titlename=element.title_name;
+                var publication=element.publication;
+                var time=element.time;
+                var author=element.author;
+                var level=element.level;
+                 
+                var html_text=$('<tr><td>'+id+'</td><td><a href="#" class="href_title">'+titlename+'</a></td><td>'+author+'</td><td>'+time+'</td><td>'+publication+'</td></tr>');
+               $('#write_text').append(html_text); 
+    });
+  }
+}
+
+window.addEventListener("load",function(data){
+       main_content.innerHTML="";
+        var head_0='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_0;
+        queryResources('Experimental_guidance');
+    },false);
+
+window.onload=function(){
+    
+    
+  var listgroup=document.getElementsByClassName('list-group')[0];
+  var a_lists=listgroup.getElementsByTagName('a');
+  // var write_text=document.getElementById('write_text');
+  var second_title=document.getElementsByClassName('second_title')[0];
+  var main_content=document.getElementById('main_content');
+
+
+  
+
+
+  for(var i=0;i<a_lists.length;i++){
+    a_lists[i].title=a_lists[i].innerText;
+    a_lists[i].index=i;
+    a_lists[i].onclick=function(){
+      a_lists[0].className="list-group-item";
+      // alert(main_content.innerHTML);
+      // alert(this.title);
+      var self=this;
+      console.log(self.index);
+      console.log(this.index);
+      switch(this.index){
+        case 0:
+        second_title.innerHTML=this.title;
+        main_content.innerHTML="";
+        var head_0='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_0;
+        queryResources('Experimental_guidance');
+       
+        break;
+        case 1:
+        second_title.innerHTML=this.title;
+        main_content.innerHTML="";
+        var head_1='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_1;
+       queryResources('Experimental_instruction');
+        break;
+        case 2:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_2='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_2;
+          queryResources('curriculum_design');
+        // main_content.innerHTML+="xiao";
+        break;
+        case 3:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_3='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_3;
+          queryResources('teaching_material');
+         
+        break;
+        case 4:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_4='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_4;
+         queryResources('internship_program');
+        
+        break;
+        case 5:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_5='<table class="table table-striped"><tbody id="write_text"><tr><th>书名</th><th>书名</th><th>书名</th></tr></tbody></table>';
+        main_content.innerHTML+=head_5;
+         queryResources('teaching_vedio');
+    
+        break;
+        case 6:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_5='<table class="table table-striped"><tbody id="write_text"><tr><th>#</th><th>论文名称</th><th>年度</th><th>作者</th><th>级别</th></tr></tbody></table>';
+        main_content.innerHTML+=head_5;
+        queryALL("academic_papers");
+        break;
+        case 7:second_title.innerHTML=this.title;
+        main_content.innerHTML=" ";
+        var head_5='<table class="table table-striped"><tbody id="write_text"><tr><th>#</th><th>论文名称</th><th>年度</th><th>作者</th><th>级别</th></tr></tbody></table>';
+        main_content.innerHTML+=head_5;
+         queryALL("patent");
+         
+        break;
+        default:
+        break;
+      }
+      
+
+    }
+
+  }
+  $("#main_content").on('click',"a",{foo:"文本:成功"},function(event){
+          // alert(event.data.foo);
+          $(".vedio_html").eq(0).attr("src",$(this).data('src'));
+          // $(".vedio_html").eq(0).html('good');
+      });
+
+ 
+};
+</script>
+</body>
+
+</html>

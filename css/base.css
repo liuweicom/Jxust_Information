@@ -1,0 +1,1691 @@
+*,::before,::after{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+ul{
+    list-style: none;
+}
+input,textarea{
+    border:none;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.clearfix::before,.clearfix::after{
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+    visibility: hidden;
+}
+@font-face {
+  font-family: 'itcast';
+  src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'itcast';
+  font-style: normal;
+}
+
+/*关于导航条*/
+.navbar-jxust {
+  background-color: #203c76;
+  border-color: #203c76;
+  top: 0;
+  margin:0;
+  padding: 0;
+  border-radius: 0;
+  /*height: 80px;这里设置高度会影响弹框的出现当小鱼786px时*/
+}
+.navbar-jxust .navbar-brand {
+  color:white;
+  height: 80px;
+ line-height: 80px;
+ padding-top: 0;
+padding-bottom: 0;
+}
+.navbar-jxust .navbar-brand:hover,
+.navbar-jxust .navbar-brand:focus {
+  color: #555;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-text {
+    color: white;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a {
+    color: white;
+    line-height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a:hover,
+.navbar-jxust .navbar-nav > li > a:focus {
+  color:#555;
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .active > a,
+.navbar-jxust .navbar-nav > .active > a:hover,
+.navbar-jxust .navbar-nav > .active > a:focus {
+     color: #555;
+/*  color:#333;*/
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .disabled > a,
+.navbar-jxust .navbar-nav > .disabled > a:hover,
+.navbar-jxust .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-toggle {
+  margin-top: 25px;
+  margin-bottom: 23px;
+ /* border-color: white;*/
+ border-color: #ddd;
+}
+.navbar-jxust .navbar-toggle:hover,
+.navbar-jxust .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-jxust .navbar-toggle .icon-bar {
+  background-color: #888;
+  /*background-color: white;*/
+}
+.navbar-jxust .navbar-collapse,
+.navbar-jxust .navbar-form {
+  border-color: #e7e7e7;
+    line-height: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-jxust .navbar-nav > .open > a,
+.navbar-jxust .navbar-nav > .open > a:hover,
+.navbar-jxust .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-jxust .navbar-link {
+  color: #777;
+}
+.navbar-jxust .navbar-link:hover {
+  color: #333;
+}
+.navbar-jxust .btn-link {
+  color: #777;
+}
+.navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link:focus {
+  color: #333;
+}
+.navbar-jxust .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-jxust .btn-link:focus {
+  color: #ccc;
+}
+
+/*修改默认按钮*/
+.btn-jxust{
+  color:#ccc;
+  /*#555*/
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust:focus,
+.btn-jxust.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-jxust:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active:hover,
+.btn-jxust.active:hover,
+.open > .dropdown-toggle.btn-jxust:hover,
+.btn-jxust:active:focus,
+.btn-jxust.active:focus,
+.open > .dropdown-toggle.btn-jxust:focus,
+.btn-jxust:active.focus,
+.btn-jxust.active.focus,
+.open > .dropdown-toggle.btn-jxust.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  background-image: none;
+}
+.btn-jxust.disabled:hover,
+.btn-jxust[disabled]:hover,
+fieldset[disabled] .btn-jxust:hover,
+.btn-jxust.disabled:focus,
+.btn-jxust[disabled]:focus,
+fieldset[disabled] .btn-jxust:focus,
+.btn-jxust.disabled.focus,
+.btn-jxust[disabled].focus,
+fieldset[disabled] .btn-jxust.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust .badge {
+  color: #fff;
+  background-color: #333;
+}
+/*隐含窗口*/
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  
+
+  line-break: auto;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+  
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}*,::before,::after{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+ul{
+    list-style: none;
+}
+input,textarea{
+    border:none;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.clearfix::before,.clearfix::after{
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+    visibility: hidden;
+}
+@font-face {
+  font-family: 'itcast';
+  src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'itcast';
+  font-style: normal;
+}
+
+/*关于导航条*/
+.navbar-jxust {
+  font-size: 1.1.5em;
+  background-color: #203c76;
+  border:none;
+ /* border-color: #203c76;*/
+  margin-bottom: :0;
+  border-radius: 0;
+  width: 100%;
+  /*height: 80px;这里设置高度会影响弹框的出现当小鱼786px时*/
+}
+.navbar-jxust .navbar-brand {
+
+  color:white;
+  font-weight: bold;
+ /* height: 80px;
+ line-height: 80px;*/
+ padding-top: 0;
+padding-bottom: 0;
+}
+.navbar-jxust .navbar-brand:hover,
+.navbar-jxust .navbar-brand:focus {
+  color: white;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-text {
+    color: white;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a {
+    font-size: 1.15em;
+    color: white;
+    line-height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a:hover,
+.navbar-jxust .navbar-nav > li > a:focus {
+  color:#555;
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .active > a,
+.navbar-jxust .navbar-nav > .active > a:hover,
+.navbar-jxust .navbar-nav > .active > a:focus {
+     color: #555;
+/*  color:#333;*/
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .disabled > a,
+.navbar-jxust .navbar-nav > .disabled > a:hover,
+.navbar-jxust .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-toggle {
+  border-color: white;
+ 
+}
+.navbar-jxust .navbar-toggle:hover,
+.navbar-jxust .navbar-toggle:focus {
+  background-color: #888;
+}
+.navbar-jxust .navbar-toggle .icon-bar {
+  /*background-color: #888;*/
+  background-color: white;
+}
+.navbar-jxust .navbar-collapse,
+.navbar-jxust .navbar-form {
+  border-color: #e7e7e7;
+    line-height: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-jxust .navbar-nav > .open > a,
+.navbar-jxust .navbar-nav > .open > a:hover,
+.navbar-jxust .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+    background: blue;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    /*background-color: transparent;*/
+    background: blue;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-jxust .navbar-link {
+  color: #777;
+}
+.navbar-jxust .navbar-link:hover {
+  color: #333;
+}
+.navbar-jxust .btn-link {
+  color: #777;
+}
+.navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link:focus {
+  color: #333;
+}
+.navbar-jxust .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-jxust .btn-link:focus {
+  color: #ccc;
+}
+
+/*修改默认按钮*/
+.btn-jxust{
+  color:#ccc;
+  /*#555*/
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust:focus,
+.btn-jxust.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-jxust:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active:hover,
+.btn-jxust.active:hover,
+.open > .dropdown-toggle.btn-jxust:hover,
+.btn-jxust:active:focus,
+.btn-jxust.active:focus,
+.open > .dropdown-toggle.btn-jxust:focus,
+.btn-jxust:active.focus,
+.btn-jxust.active.focus,
+.open > .dropdown-toggle.btn-jxust.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  background-image: none;
+}
+.btn-jxust.disabled:hover,
+.btn-jxust[disabled]:hover,
+fieldset[disabled] .btn-jxust:hover,
+.btn-jxust.disabled:focus,
+.btn-jxust[disabled]:focus,
+fieldset[disabled] .btn-jxust:focus,
+.btn-jxust.disabled.focus,
+.btn-jxust[disabled].focus,
+fieldset[disabled] .btn-jxust.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust .badge {
+  color: #fff;
+  background-color: #333;
+}
+/*隐含窗口*/
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  
+
+  line-break: auto;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+  
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+
+/*标签页自定义*/
+.nav-jxust {
+  /*border-bottom: 1px solid #e8e8e8;*/
+}
+.nav-jxust > li {
+  float: left;
+  margin-bottom: -1px;
+  width: 25%;
+  /*background: yellow;*/
+  text-align: center;
+}
+.nav-jxust > li > a {
+   font-size: 1.15em;
+  margin-right: 10px;
+  line-height: 1.42857143;
+  border: 4px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-jxust > li:nth-of-type(1) > a{
+  background: transparent;
+  border-bottom-color: #203c76;
+}
+.nav-jxust > li:nth-of-type(2) > a{
+ border-bottom-color: rgb(255,215,0);
+}
+.nav-jxust > li:nth-of-type(3) > a{
+border-bottom-color: rgb(186,85,211);
+}
+.nav-jxust > li:nth-of-type(4) > a{
+  border-bottom-color: rgb(255,105,180);
+}
+.nav-jxust > li:first-of-type> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  border-bottom-color: #203c76;
+
+}
+.nav-jxust > li:nth-of-type(2)> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+ /* border-bottom-color: rgb(255,215,0);*/
+  background-color:rgba(255,215,0,0.5);
+}
+.nav-jxust > li:nth-of-type(3)> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  /*border-bottom-color: rgb(186,85,211);*/
+  background-color:rgba(186,85,211,0.5);
+}
+.nav-jxust > li:last-of-type> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  /*border-bottom-color: rgb(255,105,180);*/
+  background-color:rgba(255,105,180,0.5);
+}
+.nav-jxust > li:first-of-type.active > a,
+.nav-jxust > li:first-of-type.active > a:hover,
+.nav-jxust > li:first-of-type.active > a:focus {
+  color: #555;
+  cursor: default;
+ /* background-color: #fff;*/
+  border: 4px solid transparent;
+  border-bottom-color: #203c76;
+  background: #e8e8e8;
+}
+.nav-jxust > li:nth-of-type(2).active > a,
+.nav-jxust > li:nth-of-type(2).active > a:hover,
+.nav-jxust > li:nth-of-type(2).active > a:focus {
+  color: white;
+  cursor: default;
+  background-color: rgba(255,215,0,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(255,215,0);
+
+}
+.nav-jxust > li:nth-of-type(3).active > a,
+.nav-jxust > li:nth-of-type(3).active > a:hover,
+.nav-jxust > li:nth-of-type(3).active > a:focus {
+  color: white;
+  cursor: default;
+  background-color:rgba(186,85,211,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(186,85,211);
+}
+
+.nav-jxust > li:nth-of-type(4).active > a,
+.nav-jxust > li:nth-of-type(4).active > a:hover,
+.nav-jxust > li:nth-of-type(4).active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color:rgba(255,105,180,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(255,105,180);
+  /*background: ;*/
+}
+
+.nav-jxust.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.nav-jxust.nav-justified > li {
+  float: none;
+}
+.nav-jxust.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-jxust.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-jxust.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-jxust.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-jxust.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.nav-jxust.nav-justified > .active > a,
+.nav-jxust.nav-justified > .active > a:hover,
+.nav-jxust.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .nav-jxust.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-jxust.nav-justified > .active > a,
+  .nav-jxust.nav-justified > .active > a:hover,
+  .nav-jxust.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}*,::before,::after{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+ul{
+    list-style: none;
+}
+input,textarea{
+    border:none;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.clearfix::before,.clearfix::after{
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+    visibility: hidden;
+}
+@font-face {
+  font-family: 'itcast';
+  src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'itcast';
+  font-style: normal;
+}
+
+/*关于导航条*/
+.navbar-jxust {
+  background-color: #203c76;
+  border-color: #203c76;
+  top: 0;
+  margin:0;
+  padding: 0;
+  border-radius: 0;
+  /*height: 80px;这里设置高度会影响弹框的出现当小鱼786px时*/
+}
+.navbar-jxust .navbar-brand {
+  color:white;
+  height: 80px;
+ line-height: 80px;
+ padding-top: 0;
+padding-bottom: 0;
+}
+.navbar-jxust .navbar-brand:hover,
+.navbar-jxust .navbar-brand:focus {
+  color: #555;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-text {
+    color: white;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a {
+    color: white;
+    line-height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a:hover,
+.navbar-jxust .navbar-nav > li > a:focus {
+  color:#555;
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .active > a,
+.navbar-jxust .navbar-nav > .active > a:hover,
+.navbar-jxust .navbar-nav > .active > a:focus {
+     color: #555;
+/*  color:#333;*/
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .disabled > a,
+.navbar-jxust .navbar-nav > .disabled > a:hover,
+.navbar-jxust .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-toggle {
+  margin-top: 25px;
+  margin-bottom: 23px;
+ /* border-color: white;*/
+ border-color: #ddd;
+}
+.navbar-jxust .navbar-toggle:hover,
+.navbar-jxust .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-jxust .navbar-toggle .icon-bar {
+  background-color: #888;
+  /*background-color: white;*/
+}
+.navbar-jxust .navbar-collapse,
+.navbar-jxust .navbar-form {
+  border-color: #e7e7e7;
+    line-height: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-jxust .navbar-nav > .open > a,
+.navbar-jxust .navbar-nav > .open > a:hover,
+.navbar-jxust .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-jxust .navbar-link {
+  color: #777;
+}
+.navbar-jxust .navbar-link:hover {
+  color: #333;
+}
+.navbar-jxust .btn-link {
+  color: #777;
+}
+.navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link:focus {
+  color: #333;
+}
+.navbar-jxust .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-jxust .btn-link:focus {
+  color: #ccc;
+}
+
+/*修改默认按钮*/
+.btn-jxust{
+  color:#ccc;
+  /*#555*/
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust:focus,
+.btn-jxust.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-jxust:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active:hover,
+.btn-jxust.active:hover,
+.open > .dropdown-toggle.btn-jxust:hover,
+.btn-jxust:active:focus,
+.btn-jxust.active:focus,
+.open > .dropdown-toggle.btn-jxust:focus,
+.btn-jxust:active.focus,
+.btn-jxust.active.focus,
+.open > .dropdown-toggle.btn-jxust.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  background-image: none;
+}
+.btn-jxust.disabled:hover,
+.btn-jxust[disabled]:hover,
+fieldset[disabled] .btn-jxust:hover,
+.btn-jxust.disabled:focus,
+.btn-jxust[disabled]:focus,
+fieldset[disabled] .btn-jxust:focus,
+.btn-jxust.disabled.focus,
+.btn-jxust[disabled].focus,
+fieldset[disabled] .btn-jxust.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust .badge {
+  color: #fff;
+  background-color: #333;
+}
+/*隐含窗口*/
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  
+
+  line-break: auto;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+  
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}*,::before,::after{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+ul{
+    list-style: none;
+}
+input,textarea{
+    border:none;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.clearfix::before,.clearfix::after{
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+    visibility: hidden;
+}
+@font-face {
+  font-family: 'itcast';
+  src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format('svg'), url('../font/MiFie-Web-Font.ttf') format('truetype'), url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'itcast';
+  font-style: normal;
+}
+
+/*关于导航条*/
+.navbar-jxust {
+  font-size: 1.1.5em;
+  background-color: #203c76;
+  border-color: transparent;
+  margin-bottom: :0;
+  border-radius: 0;
+  width: 100%;
+  /*height: 80px;这里设置高度会影响弹框的出现当小鱼786px时*/
+}
+.navbar-jxust .navbar-brand {
+
+  color:white;
+  font-weight: bold;
+ /* height: 80px;
+ line-height: 80px;*/
+ padding-top: 0;
+padding-bottom: 0;
+}
+.navbar-jxust .navbar-brand:hover,
+.navbar-jxust .navbar-brand:focus {
+  color: white;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-text {
+    color: white;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a {
+    font-size: 1.15em;
+    color: white;
+    line-height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+  /*color: #777;*/
+}
+.navbar-jxust .navbar-nav > li > a:hover,
+.navbar-jxust .navbar-nav > li > a:focus {
+  color:#555;
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .active > a,
+.navbar-jxust .navbar-nav > .active > a:hover,
+.navbar-jxust .navbar-nav > .active > a:focus {
+     color: #555;
+/*  color:#333;*/
+  background-color: #e8e8e8;
+}
+.navbar-jxust .navbar-nav > .disabled > a,
+.navbar-jxust .navbar-nav > .disabled > a:hover,
+.navbar-jxust .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-jxust .navbar-toggle {
+  border-color: white;
+ 
+}
+.navbar-jxust .navbar-toggle:hover,
+.navbar-jxust .navbar-toggle:focus {
+  background-color: #888;
+}
+.navbar-jxust .navbar-toggle .icon-bar {
+  /*background-color: #888;*/
+  background-color: white;
+}
+.navbar-jxust .navbar-collapse,
+.navbar-jxust .navbar-form {
+  border-color: #e7e7e7;
+    line-height: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-jxust .navbar-nav > .open > a,
+.navbar-jxust .navbar-nav > .open > a:hover,
+.navbar-jxust .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+    background: blue;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    /*background-color: transparent;*/
+    background: blue;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-jxust .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-jxust .navbar-link {
+  color: #777;
+}
+.navbar-jxust .navbar-link:hover {
+  color: #333;
+}
+.navbar-jxust .btn-link {
+  color: #777;
+}
+.navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link:focus {
+  color: #333;
+}
+.navbar-jxust .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-jxust .btn-link:hover,
+.navbar-jxust .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-jxust .btn-link:focus {
+  color: #ccc;
+}
+
+/*修改默认按钮*/
+.btn-jxust{
+  color:#ccc;
+  /*#555*/
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust:focus,
+.btn-jxust.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-jxust:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-jxust:active:hover,
+.btn-jxust.active:hover,
+.open > .dropdown-toggle.btn-jxust:hover,
+.btn-jxust:active:focus,
+.btn-jxust.active:focus,
+.open > .dropdown-toggle.btn-jxust:focus,
+.btn-jxust:active.focus,
+.btn-jxust.active.focus,
+.open > .dropdown-toggle.btn-jxust.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.btn-jxust:active,
+.btn-jxust.active,
+.open > .dropdown-toggle.btn-jxust {
+  background-image: none;
+}
+.btn-jxust.disabled:hover,
+.btn-jxust[disabled]:hover,
+fieldset[disabled] .btn-jxust:hover,
+.btn-jxust.disabled:focus,
+.btn-jxust[disabled]:focus,
+fieldset[disabled] .btn-jxust:focus,
+.btn-jxust.disabled.focus,
+.btn-jxust[disabled].focus,
+fieldset[disabled] .btn-jxust.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-jxust .badge {
+  color: #fff;
+  background-color: #333;
+}
+/*隐含窗口*/
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  
+
+  line-break: auto;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+  
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+
+/*标签页自定义*/
+.nav-jxust {
+  /*border-bottom: 1px solid #e8e8e8;*/
+}
+.nav-jxust > li {
+  float: left;
+  margin-bottom: -1px;
+  width: 25%;
+  /*background: yellow;*/
+  text-align: center;
+}
+.nav-jxust > li > a {
+   font-size: 1.15em;
+  margin-right: 10px;
+  line-height: 1.42857143;
+  border: 4px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-jxust > li:nth-of-type(1) > a{
+  background: transparent;
+  border-bottom-color: #203c76;
+}
+.nav-jxust > li:nth-of-type(2) > a{
+ border-bottom-color: rgb(255,215,0);
+}
+.nav-jxust > li:nth-of-type(3) > a{
+border-bottom-color: rgb(186,85,211);
+}
+.nav-jxust > li:nth-of-type(4) > a{
+  border-bottom-color: rgb(255,105,180);
+}
+.nav-jxust > li:first-of-type> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  border-bottom-color: #203c76;
+
+}
+.nav-jxust > li:nth-of-type(2)> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+ /* border-bottom-color: rgb(255,215,0);*/
+  background-color:rgba(255,215,0,0.5);
+}
+.nav-jxust > li:nth-of-type(3)> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  /*border-bottom-color: rgb(186,85,211);*/
+  background-color:rgba(186,85,211,0.5);
+}
+.nav-jxust > li:last-of-type> a:hover {
+  /*border-color: #eee #eee #ddd;*/
+  /*border-bottom-color: rgb(255,105,180);*/
+  background-color:rgba(255,105,180,0.5);
+}
+.nav-jxust > li:first-of-type.active > a,
+.nav-jxust > li:first-of-type.active > a:hover,
+.nav-jxust > li:first-of-type.active > a:focus {
+  color: #555;
+  cursor: default;
+ /* background-color: #fff;*/
+  border: 4px solid transparent;
+  border-bottom-color: #203c76;
+  background: #e8e8e8;
+}
+.nav-jxust > li:nth-of-type(2).active > a,
+.nav-jxust > li:nth-of-type(2).active > a:hover,
+.nav-jxust > li:nth-of-type(2).active > a:focus {
+  color: white;
+  cursor: default;
+  background-color: rgba(255,215,0,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(255,215,0);
+
+}
+.nav-jxust > li:nth-of-type(3).active > a,
+.nav-jxust > li:nth-of-type(3).active > a:hover,
+.nav-jxust > li:nth-of-type(3).active > a:focus {
+  color: white;
+  cursor: default;
+  background-color:rgba(186,85,211,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(186,85,211);
+}
+
+.nav-jxust > li:nth-of-type(4).active > a,
+.nav-jxust > li:nth-of-type(4).active > a:hover,
+.nav-jxust > li:nth-of-type(4).active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color:rgba(255,105,180,0.5);
+  border: 4px solid transparent;
+  border-bottom-color: rgb(255,105,180);
+  /*background: ;*/
+}
+
+.nav-jxust.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.nav-jxust.nav-justified > li {
+  float: none;
+}
+.nav-jxust.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-jxust.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-jxust.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-jxust.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-jxust.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.nav-jxust.nav-justified > .active > a,
+.nav-jxust.nav-justified > .active > a:hover,
+.nav-jxust.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .nav-jxust.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-jxust.nav-justified > .active > a,
+  .nav-jxust.nav-justified > .active > a:hover,
+  .nav-jxust.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+/*头部固定*/
+/*标题栏这里不能随便设置了高度，如果设置死了那么当他拓展成小图标时就无法向下展开*/
+
+#head_bottom>.navbar>.container>.navbar-header>.navbar-brand{
+  width: 165px;
+  background:url('../img/jxust_logo_only.png') no-repeat 0px 10px;
+  background-size:65px 60px;
+  padding-left:65px;
+  padding-right: 0;
+  font-size: 1.3em;
+}
+
+/*尾部*/
+#bottom_content{
+ padding-top: 10px;
+  background:  #203c76;
+}
+#bottom_content>.container>.text-center{
+  color: white;
+}
+/*分页目录*/
+#middle_content{
+ min-height: 500px;
+}
+#middle_content>.container>h3{
+  color: #143270;
+}
+#middle_content>.container>.row>.col-xs-4.col-md-3>.list-group{
+  border-radius: 0px;
+}
+#middle_content>.container>.row>.col-xs-4.col-md-3>.list-group>.list-group-item{
+  color: #143270;
+  text-align: center;
+  background: #e8e8e8;
+  border-bottom:1px solid #fff;
+  border-top: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+}
+#middle_content>.container>.row>.col-xs-4.col-md-3>.list-group>.list-group-item:hover,
+#middle_content>.container>.row>.col-xs-4.col-md-3>.list-group>.list-group-item:focus{
+  background: #8c8b8b;
+  color: #fff;
+}
+#middle_content>.container>.row>.col-xs-4.col-md-3>.list-group>.list-group-item.active{
+  background-color: #8c8b8b;
+  color: #fff;
+}
+/*列表添加点击转换连接*/
+#main_content>.table.table-striped>tbody>tr>td>.href_title{
+  text-decoration: none;
+  color:#143270;
+}

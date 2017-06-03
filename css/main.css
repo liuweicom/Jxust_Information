@@ -1,0 +1,237 @@
+.topbar{
+	height: 88px;
+	margin: 0 21px;
+	/*background: red;*/
+
+}
+.topbar .container{
+	height: 88px;
+	position: relative;
+}
+.topbar #header_logo{
+	width: 94px;
+	height: 88px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background:url('../img/jxust_logo_only.png') no-repeat 0 10px;
+	background-size: 75px 70px;
+}
+.topbar #header_info{
+	width: 100%;
+	background: blue;
+	margin-left: 95px;
+	color: #203c76;
+	height: 88px;
+	line-height: 88px;
+	font-size: 3em;
+}
+.topbar #topbar_right{
+	width: 100px;
+	height: 88px;
+	position: absolute;
+	right: 0;
+	background:blue;
+	text-decoration:none;
+}
+.topbar #topbar_right::hover{
+
+}
+
+.topbar .icon-telephone::before{
+	content: "\e909";
+	height: 88px;
+	line-height: 88px;
+  	font-size: 2em;
+  	color: #203c76;
+}
+.topbar #connect{
+	height: 88px;
+	line-height: 88px;
+	font-size: 1.15em;
+	color: #203c76;
+	text-align: center;
+}
+/*#head_bottom>.navbar-static-top{
+	position: fixed;
+}
+
+#head_bottom>.navbar>.container>.collapse{
+	padding-left: 0;
+	padding-right: 0;
+}*/
+
+/*轮播图*/
+#content_carousel{
+	/*margin-top: 80px;*/ /*这样缩进时下面的显示无法完成*/
+	/*width: 100%;
+	height: 205px;*/
+	/*background: red;*/
+	/*background: blue;*/
+}
+
+#content_carousel>#main_img>.carousel-inner>.item >img{
+	width: 100%;
+	/*height:205px;*/
+	overflow: hidden;
+}
+
+#main_img{
+	/*margin-top: 80px;*/
+}
+#main_img > .carousel-inner > .item {
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+
+/* 当屏幕宽度大于768时，将元素高度设置为410px */
+
+@media (min-width: 768px) {
+  #main_img > .carousel-inner > .item {
+    height: 410px;
+     background-image: url("../img/bg2.png");
+  }
+}
+
+#main_img > .carousel-inner > .item > img {
+  width: 100%;
+}
+/*实验室中心概括*/
+#content_info{
+	background:#e8e8e8;
+	width:100%;
+	padding: 20px 0;
+	height: auto; 
+	/*overflow: hidden;*/
+}
+#content_info>.container>.row>.col-xs-12.col-md-8>p{
+	text-indent:50px;
+	color:#555;
+	font-size: 1.15em;
+	overflow:hidden;   
+	text-overflow:ellipsis; 
+}
+#content_info>.container>.row>.col-sm-12.col-md-4.hidden-xs{
+	height: auto;
+	overflow: hidden;
+}
+
+#content_info>.container>.row>.col-sm-12.col-md-4.hidden-xs>#pie{
+height: 320px;
+color:#555;
+}
+@media screen and(min-width:768px) and (max-width:992px ){
+  #content_info>.container>.row>.col-sm-12.col-md-4.hidden-xs>#pie{
+	height: 600px;
+	color:#555;
+	background:red;
+	}
+}
+
+/*#content_info>.container>.row>.col-xs-12.col-md-12>p{
+	text-indent:50px;
+	color:#555;
+	font-size: 1.15em;
+	overflow:hidden;   
+	text-overflow:ellipsis; 
+}*/
+
+/*新闻、通知、研究方向*/
+#three_parts{
+	margin-top: 20px;
+	width: 100%;
+	/*height: 410px;*/
+	}
+
+#three_parts>.container>.tab-content>.tab-pane{
+	text-indent:50px;
+	/*height:350px;*/
+	padding: 20px;
+	overflow: auto;
+	/*white-space:nowrap;  
+	word-break:keep-all; */
+	-ms-word-break: break-all;
+     word-break: break-all;
+}
+#three_parts>.container>.tab-content>.tab-pane>.getMore{
+	width: 100%;
+	height: 37px;
+	line-height: 37px;
+	border:1px solid #ddd;
+	text-align:center;
+	background: #fff;
+	color: #555;
+}
+#three_parts>.container>.tab-content>.tab-pane#home{
+	background: #e8e8e8;
+}
+#three_parts>.container>.tab-content>.tab-pane#profile{
+	background-color:rgba(255,215,0,0.3);
+}
+#three_parts>.container>.tab-content>.tab-pane#messages{
+	background-color:rgba(186,85,211,0.3);
+}
+#three_parts>.container>.tab-content>.tab-pane#settings{
+	background-color:rgba(255,105,180,0.3);
+}
+#three_parts>.container>.tab-content>.tab-pane{
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+#three_parts>.container>.tab-content>.tab-pane>.list-group>.list-group-item{
+	position: relative;
+	/*height: 37px;*/
+	/*width: 100%;*/
+	text-overflow:ellipsis;
+	
+}
+#three_parts>.container>.tab-content>.tab-pane>.list-group>.list-group-item>.num{
+	/*width: 20px;*/
+	height: 20px;
+	background: #203c76;
+	display: inline-block;
+	/*
+	position:absolute;
+	left: 30px;
+	top: 10px;*/
+	color: red;
+	margin-right: 10px;
+}
+#three_parts>.container>.tab-content>.tab-pane>.list-group>.list-group-item>.badge{
+	/*position: absolute;
+	right: 10px;
+	top: 10px;*/
+	/*width: 50px;*/
+	color: red;
+
+}
+#three_parts>.container>.tab-content>.tab-pane>.list-group>.list-group-item>.new{
+	width: 50px;
+	height: 37px;
+	display: inline-block;
+	background: red;
+	color: black;
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+/*研究方向*/
+#messages>.media{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+#messages>.media>.media-body{
+	color: #555;
+}
+#messages>.media>.media-left>a>.media-object{
+	width: 64px;
+	height: 64px;
+}
+/*竞赛园地*/
+#three_parts>.container>.tab-content>#settings>.list-group>.list-group-item{
+	margin-bottom: 10px;
+}
